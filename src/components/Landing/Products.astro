@@ -1,0 +1,20 @@
+---
+import Product from "./MiniComponents/Product.astro";
+---
+<section id="store" class="p-2 group relative block mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 lg:py-16">
+    <h2 class="text-center text-3xl font-bold tracking-tight text-blueaccent sm:text-5xl">
+        Productos
+      </h2>
+    <div class="grid p-4  grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8">
+        <Product 
+            Image="./img/GuaSha-2.webp"
+            ProductName="Gua Sha"
+            Details="Instrumento para automasajear hecho de cuarzo rosa"
+        />
+        <Product 
+            Image="./img/Espirometro.png"
+            ProductName="Incentivo Inspiratorio Volumetrico"
+            Details="Aumenta la fuerza de los músculos inspiratirios"
+        />
+    </div>
+</section>

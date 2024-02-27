@@ -1,0 +1,46 @@
+---
+interface Props {
+    Image: string;
+    ProductName: String;
+    Details: String;
+}
+const { Image, ProductName, Details} = Astro.props;
+---
+
+<!-- <a href="/shop" class="relative h-70 rounded-lg block overflow-hidden">
+  
+    <img
+      src={Image}
+      class="h-full w-full object-cover transition duration-500 hover:scale-105 sm:h-72"
+    />
+  
+    <div class="relative border border-white bg-white p-6">
+      <h3 class="mt-4 text-lg font-bold text-grayblue">{ProductName}</h3> 
+      <p class="mt-1.5 text-sm text-gray">{Details}</p>
+      <form class="mt-4">
+        <div
+        class="block w-full text-center rounded bg-blueaccent p-4 text-white font-bold text-sm font-medium transition hover:scale-105"
+        >
+          Ver Producto
+      </div>
+      </form>
+    </div>
+  </a> -->
+
+  <a href="/shop" class="relative rounded-lg block overflow-hidden">
+    <img
+      src={Image}
+      class="w-full h-96 object-cover transition duration-500 hover:scale-105"
+    />
+    <div class="relative border border-white bg-white p-4 sm:p-6">
+      <h3 class="text-lg font-bold text-grayblue">{ProductName}</h3>
+      <p class="text-sm text-gray">{Details}</p>
+      <button
+        type="button"
+        class="mt-4 w-full text-center rounded bg-blueaccent py-2 px-4 text-white font-medium transition hover:scale-105"
+      >
+        Ver Producto
+      </button>
+    </div>
+  </a>
+  

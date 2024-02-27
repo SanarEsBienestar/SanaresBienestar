@@ -1,0 +1,38 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "attributes": {
+        "title": "Gua Sha",
+        "active": true,
+        "qty": 20,
+        "price": 85000,
+        "createdAt": "2024-01-02T01:50:24.039Z",
+        "updatedAt": "2024-01-19T22:41:41.753Z",
+        "publishedAt": "2024-01-02T01:50:33.197Z",
+        "details": "Instrumento para automasajear hecho de cuarzo rosa que permite aumentar la circulación, disminuir la tensión muscular y mejorar el aspecto de la piel, con la compra de la Gua Sha se adjunta una lista de reproducción de videos tutoriales para el dolor en diferentes zonas del cuerpo."
+      }
+    },
+    {
+      "id": 2,
+      "attributes": {
+        "title": "Incentivo Inspiratorio Volumetrico",
+        "active": true,
+        "qty": 15,
+        "price": 90000,
+        "createdAt": "2024-01-04T20:12:11.809Z",
+        "updatedAt": "2024-01-19T22:43:54.422Z",
+        "publishedAt": "2024-01-04T20:12:20.513Z",
+        "details": "Es un instrumento que permite aumentar la fuerza de los músculos inspiratirio, facilitando el aumento del volumen de aire inspirado, lo que permite una mejor oxigenación y capacidad para realizar actividades físicas. \nSe adjunta manual de instrucciones con ejercicios progresivos."
+      }
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "pageSize": 25,
+      "pageCount": 1,
+      "total": 2
+    }
+  }
+}

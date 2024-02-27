@@ -1,0 +1,91 @@
+---
+import * as contact from "../../../data/contact.json";
+--- 
+<section class="relative mx-auto max-w-screen-xl">
+    <div class="lg:flex gap-2 m-2">
+        <div class=" bg-blue shadow-lg rounded-lg">
+            <div class="m-10 px-12 py-4 mx-auto">
+                <h1 class="xl:text-3xl text-3xl pb-4 text-white font-bold">Encuentranos</h1>
+                <p class="text-xl text-white pb-8 leading-relaxed font-normal lg:pr-4">¿Tienes Alguna pregunta? ¿Quieres conocernos? o ¿Solo quieres saludarnos?
+                  <br /> Cantáctanos. Estámos para servirte:</p>
+                <div class="flex pb-4 items-center">
+                    <div aria-label="phone icon" role="img">
+                        <img src="/img/phone.svg" alt="phone"/>
+                        
+                    </div>
+                    <p class="pl-4 text-white text-base">{ contact.data.attributes.phone }</p>
+                </div>
+                <div class="flex items-center">
+                    <div aria-label="email icon" role="img">
+                        <img src="/img/mail.svg" alt="email"/>
+                        
+                    </div>
+                    <p class="pl-4 text-white text-base">{ contact.data.attributes.email }</p>
+                </div>
+                <p class="text-lg text-white pt-10 tracking-wide">
+                    { contact.data.attributes.address }
+                    <br />
+                    { contact.data.attributes.city }
+                </p>
+                <div class=" pt-16" >
+                    <a href="/services" class="text-white font-bold tracking-wide underline focus:outline-none focus:ring-2 focus:ring-white ">Conócenos--></a>
+                </div>
+            </div>
+        </div>
+        <div class="rounded-lg bg-yellowburn p-8 shadow-lg lg:col-span-3 lg:p-12">
+            <form action="" class="space-y-4">
+                <div>
+                  <label class="sr-only" for="name">Nombre</label>
+                  <input
+                    class="w-full rounded-lg border-sky-400 p-3 text-sm"
+                    placeholder="Nombre"
+                    type="text"
+                    id="name"
+                  />
+                </div>
+      
+                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  <div>
+                    <label class="sr-only" for="email">Email</label>
+                    <input
+                      class="w-full rounded-lg border-sky-400 p-3 text-sm"
+                      placeholder="Email"
+                      type="email"
+                      id="email"
+                    />
+                  </div>
+      
+                  <div>
+                    <label class="sr-only" for="phone">Teléfono</label>
+                    <input
+                      class="w-full rounded-lg border-sky-400 p-3 text-sm"
+                      placeholder="Número de Teléfono"
+                      type="tel"
+                      id="phone"
+                    />
+                  </div>
+                </div>
+      
+                <div>
+                  <label class="sr-only" for="message">Mensaje</label>
+      
+                  <textarea
+                    class="w-full rounded-lg border-sky-400 p-3 text-sm"
+                    placeholder="Mensaje"
+                    rows="8"
+                    id="message"
+                  ></textarea>
+                </div>
+      
+                <div class="mt-4">
+                  <button
+                    type="submit"
+                    class="rounded-md bg-blueaccent px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-orangeburn focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500">
+                    Enviar
+                  </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+            

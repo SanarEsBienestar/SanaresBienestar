@@ -1,0 +1,19 @@
+---
+interface Props {
+    Title: String;
+    Description: String;
+}
+const { Title, Description } = Astro.props;
+---
+
+<a 
+    class="block bg-white rounded-xl border border-grayblue p-4 shadow-sm hover:border-orangeburn hover:ring-1 hover:ring-orangeburn focus:outline-none focus:ring"
+    href="/services"
+>
+
+    <h2 class="mt-2 text-blueaccent font-bold">{Title}</h2>
+
+    <p class="hidden text-gray sm:mt-1 sm:block sm:text-sm sm:text-gray">
+        {Description}
+    </p>
+</a>

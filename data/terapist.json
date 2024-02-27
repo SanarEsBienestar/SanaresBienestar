@@ -1,0 +1,25 @@
+{
+  "data": {
+    "id": 1,
+    "attributes": {
+      "createdAt": "2024-01-04T20:04:42.425Z",
+      "updatedAt": "2024-01-25T17:29:55.372Z",
+      "publishedAt": "2024-01-04T20:10:08.221Z",
+      "Info": [
+        {
+          "id": 1,
+          "Title": "Benying Szetu",
+          "Profession": "Fisioterapeuta",
+          "Biography": "Especialista en terapia manual ortopédica, certificada en inducción Miofascial, a través sus técnicas logra disminuir las tensiones."
+        },
+        {
+          "id": 2,
+          "Title": "Cristian Rodriguez ",
+          "Profession": "Fisioterapeuta",
+          "Biography": "Especialista en cuidado crítico con su método logra la Recuperación de tejidos y readaptación cardíaca y pulmonar."
+        }
+      ]
+    }
+  },
+  "meta": {}
+}

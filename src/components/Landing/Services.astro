@@ -1,0 +1,69 @@
+---
+import Service from "./MiniComponents/Service.astro";
+---
+
+<section>
+    <div class="mx-auto max-w-screen-xl px-2 py-12 sm:px-6 lg:px-2 lg:py-16">
+      <div class="grid grid-cols-1 gap-y-4 lg:grid-cols-2 lg:items-center lg:gap-x-1">
+        <div class="mx-auto max-w-lg text-center lg:mx-0 ltr:lg:text-left rtl:lg:text-right">
+          <h2 class="text-3xl font-bold text-blueaccent sm:text-4xl">Nuestros Servicios</h2>
+  
+          <p class="mt-4 text-gray">
+            Explora la experticia de nuestros servicios, donde la esencia de precisión, excelencia, disciplina y amabilidad se fusiona. Sumérgete en tratamientos fisioterapéuticos que reflejan nuestro compromiso, brindando resultados notables con una atención cálida y distintiva.
+          </p>
+  
+          <a
+            href="#"
+            class="mt-8 inline-block rounded bg-yellowburn px-12 py-3 text-sm font-medium text-white transition hover:bg-blueaccent focus:outline-none focus:ring focus:ring-yellowburn"
+          >
+            Agenda Hoy
+          </a>
+        </div>
+  
+        <div class="grid grid-cols-2 gap-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <Service 
+            Title="Fisioterapia ortopédica"
+            Description="Disminución de la tensión muscular y del dolor."
+          />
+  
+          <Service 
+            Title="Fisioterapia geriátrica"
+            Description="Mejorar funcionalidad y disminuir el riesgos de caídas."
+          />
+  
+          <Service
+            Title="Rehabilitación post-operatorio"
+            Description="Intervención del tejido para disminuir la inflamación y el dolor."
+          />
+  
+          <Service
+            Title="Rehabilitación cardiopulmonar"
+            Description="Inducción Miofascial para la reeducación del patrón respiratorio."
+          />
+
+          
+          <Service 
+            Title="Técnica Inducción Miofascial"
+            Description="Manejo tejido fascial para disminuir el dolor y facilitar el movimiento."
+          />
+  
+          
+          <Service 
+            Title="Masaje deportivo de activación"
+            Description="Masoterapia deportiva para aumentar el flujo sanguíneo intramuscular."
+          />
+
+          <Service 
+            Title="Masaje de Descarga"
+            Description="Masoterapia deportiva para lograr una relajación muscular."
+          />
+
+          <Service
+            Title="Masaje de Relajación"
+            Description="Técnica de relajación muscular acompañado de drenaje linfatico."
+          />
+  
+        </div>
+      </div>
+    </div>
+  </section>

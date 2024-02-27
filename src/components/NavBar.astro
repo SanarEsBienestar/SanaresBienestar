@@ -1,0 +1,93 @@
+---
+import UserBtn from "./Nav/UserBtn.vue"
+import CartBtn from "./Nav/CartBtn.vue"
+import ReservBtn from "./Nav/ReservBtn.vue"
+---
+
+<header class="fixed top-0 left-0 right-0 z-10 bg-white bg-opacity-60 backdrop-blur-md">
+  <div class="mx-auto max-w-screen-xl px-4 sm:px-4 lg:px-8">
+    <div class="flex h-16 items-center justify-items-center justify-between">
+
+      <div class="flex-1 md:flex md:items-center md:gap-12">
+        <a class="block text-blueaccent" href="/">
+          <span class="sr-only">Home</span>
+          <div class="font-bold transition hover:text-black">
+            <img src="/img/SanaresBienestar.png" class="object-fill h-12" alt="">
+          </div>
+        </a>
+      </div>
+
+      <div class="flex justify-center justify-items-center gap-12 sm:gap-4">
+
+        <nav aria-label="Global" class="hidden md:block">
+          <ul class="flex items-center gap-8 text-m font-medium">
+            <li>
+              <a class="text-blueaccent transition hover:text-yellowburn" href="/#about">Nosotros</a>
+            </li>
+
+            <li>
+              <a class="text-blueaccent transition hover:text-yellowburn" href="/services">Servicios</a>
+            </li>
+
+            <li>
+              <a class="text-blueaccent transition hover:text-yellowburn" href="/#store">Tienda</a>
+            </li>
+
+            <li>
+              <a class="text-blueaccent transition hover:text-yellowburn" href="/blog">Blog</a>
+            </li>
+          </ul>
+        </nav>
+        
+
+        <div class="flex w-max ml-6 justify-items-center justify-center gap-2">
+          <div class="flex gap-1">
+              <UserBtn />
+              <CartBtn />
+              <ReservBtn />
+          </div>
+
+          <div class="block md:hidden">
+            <button id="mobileMenuButton" class="rounded bg-white text-blueaccent transition hover:text-gray">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+          
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobileMenu" class="md:hidden hidden h-svh fixed my-6 py-2 top-10 left-0 right-0 bg-grayash bg-opacity-90 backdrop-blur-md">
+    <ul class="flex flex-col items-center gap-4 text-m font-medium">
+      <li>
+        <a class="text-blueaccent transition hover:text-yellowburn" href="/#about">Nosotros</a>
+      </li>
+      <li>
+        <a class="text-blueaccent transition hover:text-yellowburn" href="/services">Servicios</a>
+      </li>
+      <li>
+        <a class="text-blueaccent transition hover:text-yellowburn" href="/#store">Tienda</a>
+      </li>
+      <li>
+        <a class="text-blueaccent transition hover:text-yellowburn" href="/blog">Blog</a>
+      </li>
+      <li>
+        <a class="rounded-md bg-blueaccent px-5 py-2.5 text-sm font-medium text-white shadow hover:bg-orangeburn focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500" href="/login">
+          Ingreso
+        </a>  
+      </li>
+    </ul>
+  </div>
+</header>
+
+<script>
+  document.getElementById('mobileMenuButton').addEventListener('click', function () {
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  });
+</script>

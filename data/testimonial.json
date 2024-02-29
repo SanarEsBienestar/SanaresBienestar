@@ -1,0 +1,61 @@
+{
+  "data": {
+    "id": 1,
+    "attributes": {
+      "createdAt": "2024-02-28T20:37:18.185Z",
+      "updatedAt": "2024-02-28T21:24:44.207Z",
+      "publishedAt": "2024-02-28T20:37:49.701Z",
+      "upload": [
+        {
+          "id": 13,
+          "approved": true,
+          "name": "Eliana Carolina Tamayo Amaya",
+          "details": "Increible experiencia. Los doctores tienen un gran profesionalismo y calidad humuna.",
+          "stars": 5,
+          "date": "2024-02-20"
+        },
+        {
+          "id": 15,
+          "approved": true,
+          "name": "Mariela Gonzalez",
+          "details": "Lo único malo de este sitio es no haberlo conocido antes! Benyi es completamente entregada a sus pacientes, busca la causa del problema, hace lo mejor de su conocimiento y va más allá para arreglarlo. Gracias 🤩",
+          "stars": 5,
+          "date": "2023-05-26"
+        },
+        {
+          "id": 16,
+          "approved": true,
+          "name": "Paula Melendro",
+          "details": "Después de ir a varias sesiones en diferentes lugares, puedo decir que son los mejores, conocen realmente cómo está conectado el cuerpo para solucionar el problema. Les interesa realmente solucionar mi dolor! Gracias !",
+          "stars": 5,
+          "date": "2023-10-10"
+        },
+        {
+          "id": 17,
+          "approved": true,
+          "name": "Yolanda De Yepes",
+          "details": "Muy buen compromiso técnicas y motivación en él proceso de recuperación del paciente. Agradecidos con la atención recibida.",
+          "stars": 5,
+          "date": "2023-08-11"
+        },
+        {
+          "id": 18,
+          "approved": true,
+          "name": "Leonor Cobo",
+          "details": "Gran profesionalismo, dedicación y cumplimiento demostrado a la largo de varios años!",
+          "stars": 5,
+          "date": "2023-03-13"
+        },
+        {
+          "id": 19,
+          "approved": true,
+          "name": "Juan Camilo Correa",
+          "details": "Excelente servicio, muy profesional y efectivo.",
+          "stars": 5,
+          "date": "2023-07-07"
+        }
+      ]
+    }
+  },
+  "meta": {}
+}

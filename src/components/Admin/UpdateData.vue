@@ -30,6 +30,7 @@
           { id: 'contactCheckbox', value: 'contact', label: 'Contact' },
           { id: 'servicesCheckbox', value: 'services', label: 'Services' },
           { id: 'terapistCheckbox', value: 'terapist', label: 'Terapist' },
+          { id: 'productsCheckbox', value: 'products', label: 'Products' },
         ],
         selectedUrls: [],
       };

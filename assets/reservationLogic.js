@@ -31,8 +31,8 @@ export const validateDateTimeAvialability = async (date) => {
         return JsonResponse;
     } else if (isDateOff === false) {
         //Build the endpoint for apiPetition
-        const endpintQuery = `date-reservation?populate[date][filters][datetime][$contains]=${date}`;
-        const response = await apiPetition('GET',endpintQuery);
+        const endpointQuery = `date-reservation?populate[date][filters][datetime][$contains]=${date}`;
+        const response = await apiPetition('GET',endpointQuery);
 
         JsonResponse.dayData = jsonDayWeek
         JsonResponse.status = 202;

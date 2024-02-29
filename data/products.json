@@ -8,9 +8,10 @@
         "qty": 20,
         "price": 85000,
         "createdAt": "2024-01-02T01:50:24.039Z",
-        "updatedAt": "2024-01-19T22:41:41.753Z",
+        "updatedAt": "2024-02-27T08:51:21.229Z",
         "publishedAt": "2024-01-02T01:50:33.197Z",
-        "details": "Instrumento para automasajear hecho de cuarzo rosa que permite aumentar la circulación, disminuir la tensión muscular y mejorar el aspecto de la piel, con la compra de la Gua Sha se adjunta una lista de reproducción de videos tutoriales para el dolor en diferentes zonas del cuerpo."
+        "details": "Instrumento para automasajear hecho de cuarzo rosa que permite aumentar la circulación, disminuir la tensión muscular y mejorar el aspecto de la piel, con la compra de la Gua Sha se adjunta una lista de reproducción de videos tutoriales para el dolor en diferentes zonas del cuerpo.",
+        "imgURL": "/img/GuaSha-2.webp"
       }
     },
     {
@@ -21,9 +22,10 @@
         "qty": 15,
         "price": 90000,
         "createdAt": "2024-01-04T20:12:11.809Z",
-        "updatedAt": "2024-01-19T22:43:54.422Z",
+        "updatedAt": "2024-02-27T08:51:56.700Z",
         "publishedAt": "2024-01-04T20:12:20.513Z",
-        "details": "Es un instrumento que permite aumentar la fuerza de los músculos inspiratirio, facilitando el aumento del volumen de aire inspirado, lo que permite una mejor oxigenación y capacidad para realizar actividades físicas. \nSe adjunta manual de instrucciones con ejercicios progresivos."
+        "details": "Es un instrumento que permite aumentar la fuerza de los músculos inspiratirio, facilitando el aumento del volumen de aire inspirado, lo que permite una mejor oxigenación y capacidad para realizar actividades físicas. \nSe adjunta manual de instrucciones con ejercicios progresivos.",
+        "imgURL": "/img/Espirometro.png"
       }
     }
   ],

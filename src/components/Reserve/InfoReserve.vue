@@ -42,7 +42,7 @@ export default {
 </script> -->
 
 <script>
-import { ref, reactive, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import Services from "../../../data/services.json";
 
 export default {
@@ -53,6 +53,9 @@ export default {
     // Crear una propiedad reactiva para verificar si hay datos
     const isData = ref(false);
 
+    // Mensaje botón dinámico
+    const buttonText = ref('No hay Nada Reservado');
+
     const checkStorage = () => {
         const isDataReservation = localStorage.getItem('reservationData');
         const reservationsArray = JSON.parse(isDataReservation);
@@ -62,6 +65,7 @@ export default {
         } else if (reservationsArray.length === 0){
             return isData.value = false;
         } else if (reservationsArray.length > 0){
+            buttonText.value = "Confirmar Reserva";
             return isData.value = true;
         } else {
             return isData.value = false;
@@ -104,6 +108,35 @@ export default {
       return Services.data.find(service => service.id === serviceId);
     };
 
+    // Método formateo costos
+    const formatCurrency = (value) => {
+        const formatter = new Intl.NumberFormat('es-CO', {
+        style: 'currency',
+        currency: 'COP',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 2,
+        });
+        return formatter.format(value);
+    };
+
+    // Métpdp fprmateo hora reserva
+    const formatTimeHour = (hour) =>{
+        const [hourStr, minStr] = hour.split(':');
+        let hourInt = parseInt(hourStr, 10);
+        const period = hourInt < 12 ? 'AM' : 'PM';
+
+        if(hourInt > 12){
+            hourInt -= 12;
+        } else if(hourInt === 0){
+            hourInt = 12;
+        }
+
+        const hourFormatted = hourInt.toString().padStart(2, '0');
+        const minFormatted = minStr.padStart(2, '0');
+
+        return `${hourFormatted}:${minFormatted} ${period}`;
+    }
+
     // Hook onMounted para cargar las reservaciones cuando el componente se monta
     onMounted(() => {
       checkStorage();
@@ -114,6 +147,9 @@ export default {
     return {
       reservations,
       isData,
+      buttonText,
+      formatCurrency,
+      formatTimeHour,
       loadReservations,
       getServiceDetails,
       removeReservation,
@@ -125,7 +161,9 @@ export default {
 
 <template>
     <div class="max-w-[85rem] px-4 py-14 sm:px-6 lg:px-8 lg:py-20 mx-auto h-max">
+
         <div class="w-full flex flex-col justify-center content-center" v-if="isData">
+            
             <div class="flex flex-col flex-wrap gap-4 justify-center mt-4">
 
                 <h2 class="m-2 px-8 text-center text-3xl font-bold text-blue text-balanced">Detalles del servicio a Reservar</h2>
@@ -137,7 +175,7 @@ export default {
                         <dl class="w-auto h-full divide-y divide-grayblue text-sm max-w-lg rounded-lg border border-grayblue py-3 shadow-sm">
 
                             <div class="flex justify-end m-2 -mt-1">
-                                <button class="bg-red hover:bg-orangeburn text-white text-xs font-bold py-1 px-2 rounded" @click="removeReservation(reservation.serviceUUID)">
+                                <button class="bg-red hover:bg-orangeburn text-white text-xs font-bold py-1 px-2 rounded tooltip" @click="removeReservation(reservation.serviceUUID)">
                                     X
                                 </button>
                             </div>
@@ -164,12 +202,12 @@ export default {
 
                             <div class="grid grid-cols-1 gap-1 p-3 even:bg-white sm:grid-cols-3 sm:gap-4">
                                 <dt class="font-medium md:text-right w-full md:w-24 text-center text-black">Hora:</dt>
-                                <dd class="text-gray md:text-left text-center sm:col-span-2">{{ reservation.formattedTime }}</dd>
+                                <dd class="text-gray md:text-left text-center sm:col-span-2">{{ formatTimeHour(reservation.formattedTime) }}</dd>
                             </div>
 
                             <div class="grid grid-cols-1 gap-1 p-3 even:bg-white sm:grid-cols-3 sm:gap-4">
                                 <dt class="font-medium md:text-right w-full md:w-24 text-center text-black">Costo:</dt>
-                                <dd class="text-gray md:text-left text-center sm:col-span-2">${{ reservation.serviceCost }}</dd>
+                                <dd class="text-gray md:text-left text-center sm:col-span-2">{{ formatCurrency(reservation.serviceCost)}}</dd>
                             </div>
 
                             <div class="grid grid-cols-1 gap-1 p-3 even:bg-white sm:grid-cols-3 sm:gap-4">
@@ -190,7 +228,7 @@ export default {
                 </div>
 
 
-                <form  class="space-y-4 w-full bg-bluewhite p-4 rounded-lg">
+                <form @submit.prevent="" class="space-y-4 w-full bg-bluewhite p-4 rounded-lg">
 
                     <h2 class="m-2 px-8 text-center text-3xl font-bold text-blue text-balanced">Datos para la Reserva</h2>
                     <div>
@@ -200,27 +238,30 @@ export default {
                         placeholder="Nombre"
                         type="text"
                         id="name"
+                        required
                         />
                     </div>
 
                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                         <div>
-                        <label class="sr-only" for="email">Email</label>
+                        <label class="sr-only" for="email">Correp</label>
                         <input
                             class="w-full rounded-lg border-gray p-3 text-sm"
-                            placeholder="Email address"
+                            placeholder="Correo"
                             type="email"
                             id="email"
+                            required
                         />
                         </div>
 
                         <div>
-                        <label class="sr-only" for="phone">Phone</label>
+                        <label class="sr-only" for="phone">Celular</label>
                         <input
                             class="w-full rounded-lg border-gray p-3 text-sm"
-                            placeholder="Phone Number"
+                            placeholder="Celular o Télefono"
                             type="tel"
                             id="phone"
+                            required
                         />
                         </div>
                     </div>
@@ -229,58 +270,70 @@ export default {
                         <div>
                         <label
                             for="Option1"
-                            class="block w-full cursor-pointer rounded-lg border border-gray p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
                             tabindex="0"
                         >
                             <input class="sr-only" id="Option1" type="radio" tabindex="-1" name="option" />
 
-                            <span class="text-sm"> Option 1 </span>
+                            <span class="text-sm"> Pago con Tarjeta </span>
                         </label>
                         </div>
 
                         <div>
                         <label
                             for="Option2"
-                            class="block w-full cursor-pointer rounded-lg border border-gray p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
                             tabindex="0"
                         >
                             <input class="sr-only" id="Option2" type="radio" tabindex="-1" name="option" />
 
-                            <span class="text-sm"> Option 2 </span>
+                            <span class="text-sm"> Billetera Digital </span>
                         </label>
                         </div>
 
                         <div>
                         <label
                             for="Option3"
-                            class="block w-full cursor-pointer rounded-lg border border-gray p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
                             tabindex="0"
                         >
                             <input class="sr-only" id="Option3" type="radio" tabindex="-1" name="option" />
 
-                            <span class="text-sm"> Option 3 </span>
+                            <span class="text-sm"> Efectivo </span>
+                        </label>
+                        </div>
+
+                        <div>
+                        <label
+                            for="Option4"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
+                            tabindex="0"
+                        >
+                            <input class="sr-only" id="Option4" type="radio" tabindex="-1" name="option" />
+
+                            <span class="text-sm"> Transferencia Banco </span>
+                        </label>
+                        </div>
+
+                        <div>
+                        <label
+                            for="Option5"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
+                            tabindex="0"
+                        >
+                            <input class="sr-only" id="Option5" type="radio" tabindex="-1" name="option" />
+
+                            <span class="text-sm"> Pago Consultorio </span>
                         </label>
                         </div>
                     </div>
 
-                    <div>
-                        <label class="sr-only" for="message">Message</label>
-
-                        <textarea
-                        class="w-full rounded-lg border-gray p-3 text-sm"
-                        placeholder="Message"
-                        rows="8"
-                        id="message"
-                        ></textarea>
-                    </div>
-
-                    <div class="mt-4">
-                        <button
+                    <div class="mt-4 flex align-center">
+                        <input
                         type="submit"
-                        class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
-                        >
-                        Send Enquiry
-                        </button>
+                        class="mx-auto w-full rounded-lg border-2 bg-blueaccent border-white px-8 py-4 text-lg font-bold text-white transition hover:bg-orangeburn"
+                        :value=buttonText
+                        />
                     </div>
                 </form>
             </div>
@@ -290,4 +343,31 @@ export default {
             <a href="/services" class="rounded-md bg-yellowburn h-fit py-2 px-6 text-lg font-medium text-white hover:text-white hover:bg-orangeburn">Ver Servicios</a>
         </div>
     </div>
-</template> 
+</template>
+
+<style scoped>
+.tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: 'Click Para Eliminar';
+            position: absolute;
+            bottom: -2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .tooltip:hover::after {
+            opacity: .8;
+        }
+</style>

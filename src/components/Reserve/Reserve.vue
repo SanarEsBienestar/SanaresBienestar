@@ -22,6 +22,7 @@ export default {
             style: 'currency',
             currency: 'COP',
             minimumFractionDigits: 0,
+            maximumFractionDigits: 2,
             });
             return formatter.format(value);
         },
@@ -37,9 +38,7 @@ export default {
             return `${year}-${month}-${day}`;
         },
         async validateAvailability() {
-
             try {
-                
                 this.message = 'Validando disponibilidad...';
                 let response = await validateDateTimeAvialability(this.selectedDate);
 
@@ -66,7 +65,6 @@ export default {
                 }
         },
         async handleSubmit() {
-            
             // Primero, verifica si se ha seleccionado un servicio
             if (!this.selectedService) {
                 alert("Por favor, selecciona un servicio.");

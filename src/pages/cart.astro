@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import InfoCart from "../components/Cart/InfoCart.vue"
 ---
 
-<Layout title="Mi Carrito en Sanar es Bienestar.">    
+<Layout title="Mi Carrito en Sanar es Bienestar.">   
+    <InfoCart client:only="vue" />
 </Layout>

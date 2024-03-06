@@ -43,8 +43,8 @@ import ReservBtn from "./Nav/ReservBtn.vue"
         <div class="flex w-max ml-6 justify-items-center justify-center gap-2">
           <div class="flex gap-1">
               <UserBtn />
-              <CartBtn />
-              <ReservBtn />
+              <CartBtn client:load />
+              <ReservBtn client:load />
           </div>
 
           <div class="flex p-0 m-1 md:hidden">
@@ -72,7 +72,7 @@ import ReservBtn from "./Nav/ReservBtn.vue"
         <a class="text-blueaccent transition hover:text-yellowburn  uppercase" href="/services">Servicios</a>
       </li>
       <li>
-        <a class="text-blueaccent transition hover:text-yellowburn  uppercase" href="/#store">Tienda</a>
+        <a class="text-blueaccent transition hover:text-yellowburn  uppercase" href="/shop">Tienda</a>
       </li>
       <li>
         <a class="text-blueaccent transition hover:text-yellowburn  uppercase" href="/blog">Blog</a>

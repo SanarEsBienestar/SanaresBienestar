@@ -6,7 +6,10 @@ export default {
     name: 'Products',
     data (){
         return {
-            productsData: Products.data
+            productsData: Products.data,
+            productQuantities: {},
+            message: '',
+            isMessageVisible: false,
         }
     },
     methods:{
@@ -18,6 +21,134 @@ export default {
             maximumFractionDigits: 2,
             });
             return formatter.format(value);
+        },
+        // addToCart(product) {
+        //     // Primero, intenta recuperar el item del localStorage.
+        //     let cart = localStorage.getItem('cartItems');
+
+        //     // Verifica si cart es null o undefined.
+        //     if (cart === null || cart === undefined || !cart) {
+        //         // Si cart no existe, inicialízalo como un arreglo vacío y guárdalo en localStorage.
+        //         localStorage.setItem('cartItems', '');
+        //         // Luego, asigna ese arreglo vacío a la variable cart.
+        //         cart = localStorage.getItem('cartItems');
+        //     } 
+
+        //     const qtyToAdd = product.qty || 1; // Asume que ya tienes la cantidad definida
+
+        //     console.log("Cantidad" + cart.length);
+
+        //     // Encuentra si el producto ya existe en el carrito
+        //     if(cart.length == 0){
+        //          // Agrega el nuevo producto al carrito si no se supera el máximo
+        //          const productToAdd = {
+        //             id: product.id,
+        //             title: product.attributes.title,
+        //             price: product.attributes.price,
+        //             qty: qtyToAdd,
+        //             subtotal: product.attributes.price * qtyToAdd // Calcula el subtotal
+        //         };
+        //         localStorage.setItem('cartItems', JSON.stringify([productToAdd]));
+        //         this.showMessage('Producto agregado al carrito');
+        //         return
+        //     } else {
+        //         const existingProductIndex = cart.findIndex(item => item.id === product.id);
+        //         console.log(existingProductIndex);
+        //     }
+            
+        //     if (existingProductIndex !== -1) {
+        //         // Calcula la nueva cantidad total que tendría el producto después de añadir las unidades
+        //         const newQty = cart[existingProductIndex].qty + qtyToAdd;
+                
+        //         // Verifica si la nueva cantidad supera el máximo permitido
+        //         if (newQty > 5) {
+        //             this.showMessage('No se pueden agregar más de 5 unidades');
+        //             return; // Sale del método sin actualizar el carrito
+        //         }
+
+        //         // Actualiza la cantidad y el subtotal si no se supera el máximo
+        //         cart[existingProductIndex].qty = newQty;
+        //         cart[existingProductIndex].subtotal = cart[existingProductIndex].price * newQty;
+        //     } else {
+        //         // Si el producto no existe en el carrito, verifica si la cantidad a añadir supera el máximo permitido
+        //         if (qtyToAdd > 5) {
+        //             this.showMessage('No se pueden agregar más de 5 unidades');
+        //             return; // Sale del método sin agregar el producto al carrito
+        //         }
+
+        //         // Agrega el nuevo producto al carrito si no se supera el máximo
+        //         const productToAdd = {
+        //             id: product.id,
+        //             title: product.attributes.title,
+        //             price: product.attributes.price,
+        //             qty: qtyToAdd,
+        //             subtotal: product.attributes.price * qtyToAdd // Calcula el subtotal
+        //         };
+        //         cart.push(productToAdd);
+        //         //localStorage.setItem('cart', JSON.stringify([productToAdd]));
+        //     }
+
+        //     console.log(cart);
+        //     this.showMessage('Producto agregado al carrito');
+        //     // setTimeout(()=>{
+        //     //     // Recargar la página después de 3 segundos
+        //     //     window.location.reload();
+        //     // }, 3000);
+        // },
+        addToCart(product) {
+            // Intenta recuperar el item del localStorage y lo convierte de JSON a un objeto de JavaScript.
+            let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+            const qtyToAdd = product.qty || 1; // Asume que ya tienes la cantidad definida
+
+            // Ya no es necesario verificar si cart es null o undefined aquí, porque ya lo manejamos arriba
+
+            console.log("Cantidad" + cart.length);
+
+            const existingProductIndex = cart.findIndex(item => item.id === product.id);
+            console.log(existingProductIndex);
+
+            if (existingProductIndex !== -1) {
+                // El producto ya existe, actualiza la cantidad y subtotal
+                const newQty = cart[existingProductIndex].qty + qtyToAdd;
+                if (newQty > 5) {
+                    this.showMessage('No se pueden agregar más de 5 unidades');
+                    return;
+                }
+                cart[existingProductIndex].qty = newQty;
+                cart[existingProductIndex].subtotal = cart[existingProductIndex].price * newQty;
+            } else {
+                // El producto no existe, agrega un nuevo producto al carrito
+                if (qtyToAdd > 5) {
+                    this.showMessage('No se pueden agregar más de 5 unidades');
+                    return;
+                }
+                const productToAdd = {
+                    id: product.id,
+                    title: product.attributes.title,
+                    price: product.attributes.price,
+                    qty: qtyToAdd,
+                    subtotal: product.attributes.price * qtyToAdd
+                };
+                cart.push(productToAdd);
+            }
+
+            // Guarda el carrito actualizado en localStorage
+            localStorage.setItem('cartItems', JSON.stringify(cart));
+
+            this.showMessage('Producto agregado al carrito');
+            setTimeout(() => {
+                //Recargar página
+                window.location.reload();
+            }, 100)
+        },
+        showMessage(message) {
+            this.message = message;
+            this.isMessageVisible = true;
+
+            setTimeout(() => {
+                this.isMessageVisible = false;
+            }, 3000); // El mensaje desaparece después de 3 segundos
         }
     }
 }
@@ -42,11 +173,37 @@ export default {
                         <label for="qty" class="flex items-center text-sm mt-2 sm:mt-0">Cantidad:
                         <input id="qty" class="ml-2 w-16 border-gray-300 rounded-md border text-center" type="number" min="1" max="5" value="1" />
                         </label>
-                        <button class="w-full sm:w-fit rounded-lg bg-blueaccent px-4 py-2 text-xs sm:text-lg font-bold text-white transition hover:bg-orangeburn mt-4 sm:mt-0" >Agregar al Carrito</button>
+                        <button @click.prevent="addToCart(productsData)" class="w-full sm:w-fit rounded-lg bg-blueaccent px-4 py-2 text-xs sm:text-lg font-bold text-white transition hover:bg-orangeburn mt-4 sm:mt-0" >Agregar al Carrito</button>
                     </div>
                 </div>
 
             </div>
+            <!-- <p class="font-medium text-center">{{ message }}</p> -->
+            <div name="fade" >
+                <div v-if="isMessageVisible" class="fixed bottom-0 right-0 m-4 bg-green text-white p-4 rounded-lg">
+                    {{ message }}
+                    <a href="/cart" class="underline">Ver carrito</a>
+                </div>
+            </div>
+
         </div>
     </div>
 </template>
+<style>
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity 0.5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+        opacity: 0;
+    }
+    .message-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

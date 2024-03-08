@@ -17,6 +17,6 @@ export const fetchDataAndSaveToFile = async (urls) => {
 };
 
 // Lista de URLs que quieres actualizar
-const urlsToUpdate = ['services', 'availability', 'contact', 'products', 'terapist', 'testimonial'];
+const urlsToUpdate = ['services', 'availability', 'contact', 'products', 'terapist', 'testimonial', 'link'];
 
 fetchDataAndSaveToFile(urlsToUpdate);

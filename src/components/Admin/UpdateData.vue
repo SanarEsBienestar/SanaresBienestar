@@ -3,7 +3,7 @@
 <template>
     <form class="max-w-md mx-auto bg-white p-4 rounded shadow-md">
       <div v-for="item in checkboxes" :key="item.value" class="mb-4">
-        <label :for="item.id" class="block text-gray font-bold mb-2">
+        <label :for="item.id" class="block text-gray font-medium mb-2">
           <input
             type="checkbox"
             :id="item.id"
@@ -15,7 +15,7 @@
         </label>
       </div>
       
-      <button type="button" @click="handleButtonClick" class="bg-blueaccent text-white font-bold py-2 px-4 rounded hover:bg-bluewhite hover:text-blueaccent">
+      <button type="button" @click="handleButtonClick" class="bg-blueaccent text-white font-medium py-2 px-4 rounded hover:bg-bluewhite hover:text-blueaccent">
         Actualizar y Guardar
       </button>
     </form>

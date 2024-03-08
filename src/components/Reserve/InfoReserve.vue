@@ -166,7 +166,7 @@ export default {
             
             <div class="flex flex-col flex-wrap gap-4 justify-center mt-4">
 
-                <h2 class="m-2 px-8 text-center text-3xl font-bold text-blue text-balanced">Detalles del servicio a Reservar</h2>
+                <h2 class="m-2 px-8 text-center text-3xl font-medium text-blue text-balanced">Detalles del servicio a Reservar</h2>
 
                 <div class="flex justify-center flex-wrap gap-1 overflow-x-auto md:flex-row flex-col">
 
@@ -175,7 +175,7 @@ export default {
                         <dl class="w-auto h-full divide-y divide-grayblue text-sm max-w-lg rounded-lg border border-grayblue py-3 shadow-sm">
 
                             <div class="flex justify-end m-2 -mt-1">
-                                <button class="bg-red hover:bg-orangeburn text-white text-xs font-bold py-1 px-2 rounded tooltip" @click="removeReservation(reservation.serviceUUID)">
+                                <button class="bg-red hover:bg-orangeburn text-white text-xs font-medium py-1 px-2 rounded tooltip" @click="removeReservation(reservation.serviceUUID)">
                                     X
                                 </button>
                             </div>
@@ -230,7 +230,7 @@ export default {
 
                 <form @submit.prevent="" class="space-y-4 w-full bg-bluewhite p-4 rounded-lg">
 
-                    <h2 class="m-2 px-8 text-center text-3xl font-bold text-blue text-balanced">Datos para la Reserva</h2>
+                    <h2 class="m-2 px-8 text-center text-3xl font-medium text-blue text-balanced">Datos para la Reserva</h2>
                     <div>
                         <label class="sr-only" for="name">Nombre</label>
                         <input
@@ -270,7 +270,7 @@ export default {
                         <div>
                         <label
                             for="Option1"
-                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-medium hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
                             tabindex="0"
                         >
                             <input class="sr-only" id="Option1" type="radio" tabindex="-1" name="option" />
@@ -282,7 +282,7 @@ export default {
                         <div>
                         <label
                             for="Option2"
-                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-medium hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
                             tabindex="0"
                         >
                             <input class="sr-only" id="Option2" type="radio" tabindex="-1" name="option" />
@@ -294,7 +294,7 @@ export default {
                         <div>
                         <label
                             for="Option3"
-                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-medium hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
                             tabindex="0"
                         >
                             <input class="sr-only" id="Option3" type="radio" tabindex="-1" name="option" />
@@ -306,7 +306,7 @@ export default {
                         <div>
                         <label
                             for="Option4"
-                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-medium hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
                             tabindex="0"
                         >
                             <input class="sr-only" id="Option4" type="radio" tabindex="-1" name="option" />
@@ -318,7 +318,7 @@ export default {
                         <div>
                         <label
                             for="Option5"
-                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-bold hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
+                            class="block w-full cursor-pointer rounded-lg border border-blue p-3 text-blue font-medium hover:border-orangeburn has-[:checked]:border-blue has-[:checked]:bg-blue has-[:checked]:text-white"
                             tabindex="0"
                         >
                             <input class="sr-only" id="Option5" type="radio" tabindex="-1" name="option" />
@@ -331,7 +331,7 @@ export default {
                     <div class="mt-4 flex align-center">
                         <input
                         type="submit"
-                        class="mx-auto w-full rounded-lg border-2 bg-blueaccent border-white px-8 py-4 text-lg font-bold text-white transition hover:bg-orangeburn"
+                        class="mx-auto w-full rounded-lg border-2 bg-blueaccent border-white px-8 py-4 text-lg font-medium text-white transition hover:bg-orangeburn"
                         :value=buttonText
                         />
                     </div>
@@ -339,7 +339,7 @@ export default {
             </div>
         </div>
         <div v-else class="relative flex flex-col items-center justify-center gap-4 h-auto min-h-96">
-            <p class="m-2 text-center text-xl font-bold text-blue">No hay reservaciones. Puedes ver los servicios que tenemos:</p>
+            <p class="m-2 text-center text-xl font-medium text-blue">No hay reservaciones. Puedes ver los servicios que tenemos:</p>
             <a href="/services" class="rounded-md bg-yellowburn h-fit py-2 px-6 text-lg font-medium text-white hover:text-white hover:bg-orangeburn">Ver Servicios</a>
         </div>
     </div>

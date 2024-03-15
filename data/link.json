@@ -3,7 +3,7 @@
     "id": 1,
     "attributes": {
       "createdAt": "2024-03-07T15:27:49.171Z",
-      "updatedAt": "2024-03-07T15:27:56.290Z",
+      "updatedAt": "2024-03-15T20:28:55.058Z",
       "publishedAt": "2024-03-07T15:27:55.918Z",
       "links": [
         {
@@ -45,6 +45,30 @@
           "active": true,
           "details": "Encuentranos en Bogota: Cl. 96 #10-29 Consultorio 302, Bogotá\n",
           "type": "common"
+        },
+        {
+          "id": 6,
+          "title": "Nuestros Productos",
+          "link": "http://localhost:4321/shop",
+          "active": true,
+          "details": "Descubre los productos que tenemos para ti!",
+          "type": "common"
+        },
+        {
+          "id": 7,
+          "title": "Facebook Benying Szetu",
+          "link": "https://www.facebook.com/profile.php?id=100092626320538",
+          "active": true,
+          "details": "Sigue a Nuestra Terapista en su Página de Facebook ",
+          "type": "social"
+        },
+        {
+          "id": 8,
+          "title": "Envíanos un mensaje por Whatsapp",
+          "link": "https://wa.link/qydk8g",
+          "active": true,
+          "details": "Puedes preguntar sobre nosotros y nuestros servicios.",
+          "type": "social"
         }
       ]
     }

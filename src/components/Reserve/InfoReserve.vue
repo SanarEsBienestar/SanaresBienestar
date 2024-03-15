@@ -160,7 +160,7 @@ export default {
 </script>
 
 <template>
-    <div class="max-w-[85rem] px-4 py-14 sm:px-6 lg:px-8 lg:py-20 mx-auto h-max">
+    <div  class="max-w-[85rem] px-4 py-14 sm:px-6 lg:px-8 lg:py-20 mx-auto h-max">
 
         <div class="w-full flex flex-col justify-center content-center" v-if="isData">
             

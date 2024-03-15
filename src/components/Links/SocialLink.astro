@@ -1,0 +1,25 @@
+---
+import Instagram from "../Icons/Instagram.astro";
+import Facebook from "../Icons/Facebook.astro";
+
+interface Props {
+	title: string;
+    link: string;
+    details: string;
+}
+
+const { title, link, details } = Astro.props;
+---
+
+<a href={ link } target="_blank" class="block p-3 rounded-lg bg-gradient-to-r from-orangeburn to-yellowburn">
+    <div class="flex items-center justify-between text-white">
+      <div>
+        <p class="text-lg font-semibold">{ title }</p>
+        <p class="text-sm text-grayash">{ details }</p>
+      </div>
+      
+      <div class="h-7 w-7 ml-2">
+        <Instagram />
+      </div>
+    </div>
+</a>

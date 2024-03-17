@@ -1,6 +1,7 @@
 ---
 import Instagram from "../Icons/Instagram.astro";
 import Facebook from "../Icons/Facebook.astro";
+import Whatsapp from "../Icons/Whatsapp.astro";
 
 interface Props {
 	title: string;
@@ -9,9 +10,15 @@ interface Props {
 }
 
 const { title, link, details } = Astro.props;
+
+// Función para determinar si el enlace es de Instagram o Facebook
+const isInstagram = link.includes("instagram.com");
+const isFacebook = link.includes("facebook.com");
+const isWhatsapp = link.includes("wa.link");
 ---
 
-<a href={ link } target="_blank" class="block p-3 rounded-lg bg-gradient-to-r from-orangeburn to-yellowburn">
+<a href={ link } target="_blank" 
+    class={`block p-3 rounded-lg ${isWhatsapp ? "bg-green" : "bg-gradient-to-r from-yellowburn to-orangeburn"}`}>
     <div class="flex items-center justify-between text-white">
       <div>
         <p class="text-lg font-semibold">{ title }</p>
@@ -19,7 +26,9 @@ const { title, link, details } = Astro.props;
       </div>
       
       <div class="h-7 w-7 ml-2">
-        <Instagram />
+        {isInstagram && <Instagram />}
+        {isFacebook && <Facebook />}
+        {isWhatsapp && <Whatsapp />}
       </div>
     </div>
 </a>

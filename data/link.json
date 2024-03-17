@@ -3,7 +3,7 @@
     "id": 1,
     "attributes": {
       "createdAt": "2024-03-07T15:27:49.171Z",
-      "updatedAt": "2024-03-15T20:28:55.058Z",
+      "updatedAt": "2024-03-17T05:59:05.744Z",
       "publishedAt": "2024-03-07T15:27:55.918Z",
       "links": [
         {
@@ -40,7 +40,7 @@
         },
         {
           "id": 5,
-          "title": "Encuentranos",
+          "title": "Encuéntranos en Bogotá",
           "link": "https://maps.app.goo.gl/HxGXuacUCZqU8NSe8",
           "active": true,
           "details": "Encuentranos en Bogota: Cl. 96 #10-29 Consultorio 302, Bogotá\n",

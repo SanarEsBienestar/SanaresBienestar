@@ -6,9 +6,9 @@ import VideoLink from "./VideoLink.astro"
 
 const activeLinks = DataLinks.data.attributes.links.filter(link => link.active);
 ---
-<main class="space-y-3 flex flex-col gap-2">
+<main class="space-y-3 flex flex-col gap-2 relative z-10 h-full bg-transparent">
     <div class="text-center mb-4">
-        <img class="w-24 h-24 rounded-full mx-auto" src="/img/icon.png" alt="Foto de perfil">
+        <img class="w-auto h-24 mx-auto" src="/img/icon.png" alt="Foto de perfil">
         <h1 class="text-xl font-bold mt-2">Sanar es Bienestar | by Benying Szetu</h1>
         <p class="text-gray text-balanced">Nuestra prioridad eres tu, vive una vida sin dolor</p>
     </div>

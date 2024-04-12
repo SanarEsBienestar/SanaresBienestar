@@ -3,28 +3,28 @@
     "id": 1,
     "attributes": {
       "createdAt": "2024-03-07T15:27:49.171Z",
-      "updatedAt": "2024-03-17T05:59:05.744Z",
+      "updatedAt": "2024-03-19T19:31:59.404Z",
       "publishedAt": "2024-03-07T15:27:55.918Z",
       "links": [
         {
           "id": 1,
-          "title": "Instagram Benying Szetu",
+          "title": "Instagram",
           "link": "https://www.instagram.com/benying.szetu/",
           "active": true,
-          "details": "Sigue la actividad de nuestra terapista",
+          "details": "Benying Szetu",
           "type": "social"
         },
         {
           "id": 2,
-          "title": "Instagram Fisionet IPS",
+          "title": "Instagram",
           "link": "https://www.instagram.com/fisionet.ips/",
-          "active": true,
-          "details": "Encuentra todo lo relacionado con nuestra IPS",
+          "active": false,
+          "details": "Fisionet IPS",
           "type": "social"
         },
         {
           "id": 3,
-          "title": "Pausas Activas para el Trabajo",
+          "title": "Youtube",
           "link": "https://www.youtube.com/watch?v=KDzuipsg69c",
           "active": true,
           "details": "Hacer pausas activas durante la jornada laboral es indispensable para mantener la salud de las articulaciones. La fisioterapeuta Benying Szetu comparte las recomendaciones para adelantar estos ejercicios con miras a mantener la salud.",
@@ -32,7 +32,7 @@
         },
         {
           "id": 4,
-          "title": "Reserva un Servicio",
+          "title": "Servicios",
           "link": "http://localhost:4321/services",
           "active": true,
           "details": "Acá puedes reservar un Servicio con nosotros",
@@ -40,7 +40,7 @@
         },
         {
           "id": 5,
-          "title": "Encuéntranos en Bogotá",
+          "title": "Ubicación",
           "link": "https://maps.app.goo.gl/HxGXuacUCZqU8NSe8",
           "active": true,
           "details": "Encuentranos en Bogota: Cl. 96 #10-29 Consultorio 302, Bogotá\n",
@@ -48,7 +48,7 @@
         },
         {
           "id": 6,
-          "title": "Nuestros Productos",
+          "title": "Productos",
           "link": "http://localhost:4321/shop",
           "active": true,
           "details": "Descubre los productos que tenemos para ti!",
@@ -56,19 +56,27 @@
         },
         {
           "id": 7,
-          "title": "Facebook Benying Szetu",
+          "title": "Facebook",
           "link": "https://www.facebook.com/profile.php?id=100092626320538",
-          "active": true,
-          "details": "Sigue a Nuestra Terapista en su Página de Facebook ",
+          "active": false,
+          "details": "Benying Szetu",
           "type": "social"
         },
         {
           "id": 8,
-          "title": "Envíanos un mensaje por Whatsapp",
+          "title": "Whatsapp",
           "link": "https://wa.link/qydk8g",
           "active": true,
-          "details": "Puedes preguntar sobre nosotros y nuestros servicios.",
+          "details": "Contáctanos",
           "type": "social"
+        },
+        {
+          "id": 9,
+          "title": "Sitio Web",
+          "link": "http://localhost:4321/",
+          "active": true,
+          "details": "Sanar es Bienestar web page",
+          "type": "common"
         }
       ]
     }

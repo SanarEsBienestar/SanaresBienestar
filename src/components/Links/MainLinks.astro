@@ -6,17 +6,34 @@ import VideoLink from "./VideoLink.astro"
 
 const activeLinks = DataLinks.data.attributes.links.filter(link => link.active);
 ---
+
 <main class="space-y-3 flex flex-col gap-2 relative z-10 h-full bg-transparent">
-    <div class="text-center mb-4">
-        <img class="w-auto h-24 mx-auto" src="/img/icon.png" alt="Foto de perfil">
-        <h1 class="text-xl font-bold mt-2">Sanar es Bienestar | by Benying Szetu</h1>
-        <p class="text-gray text-balanced">Nuestra prioridad eres tu, vive una vida sin dolor</p>
-    </div>
-    {activeLinks.map((link) => (
-        <Fragment key={link.id}>
-          {link.type === 'common' && <CommonLink {...link} />}
-          {link.type === 'social' && <SocialLink {...link} />}
-          {link.type === 'video' && <VideoLink {...link} />}
-        </Fragment>
+  <div class="text-center mb-4">
+    <img class="w-auto h-24 mx-auto" src="/img/icon.png" alt="Logotipo">
+    <h1 class="text-xl text-blueaccent font-light font-bold mt-2">Sanar es Bienestar</h1>
+    <!-- <p class="text-bluewhite text-balanced">Nuestra prioridad eres tu, vive una vida sin dolor</p> -->
+  
+    <!-- Agrupamos aquí todos los links sociales -->
+    <div class="flex m-2 justify-center flex-wrap gap-4 py-4">
+      {activeLinks.filter(link => link.type === 'social').map((link) => (
+        <SocialLink key={link.id} {...link} />
       ))}
+    </div>
+  </div>
+
+  
+  {activeLinks.map((link) => (
+    <Fragment key={link.id}>
+      {link.type === 'common' && <CommonLink {...link} />} 
+    </Fragment>
+  ))}
+
+{activeLinks.map((link) => (
+  <Fragment key={link.id}>
+    {link.type === 'video' && <VideoLink {...link} />} 
+  </Fragment>
+))}
+
+    
+  
 </main>

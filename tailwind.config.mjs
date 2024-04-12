@@ -19,7 +19,8 @@ export default {
 			bluewhite: '#cadbe3',
 			yellowburn: '#e2a55e',
 			grayash: '#eae2d7',
-			orangeburn: '#cf7041'
+			orangeburn: '#cf7041',
+			darkblue: '#071a31'
 		}
 	},
 	plugins: [animations],

@@ -18,7 +18,7 @@
           "id": 2,
           "title": "Instagram",
           "link": "https://www.instagram.com/fisionet.ips/",
-          "active": false,
+          "active": true,
           "details": "Fisionet IPS",
           "type": "social"
         },
@@ -58,7 +58,7 @@
           "id": 7,
           "title": "Facebook",
           "link": "https://www.facebook.com/profile.php?id=100092626320538",
-          "active": false,
+          "active": true,
           "details": "Benying Szetu",
           "type": "social"
         },

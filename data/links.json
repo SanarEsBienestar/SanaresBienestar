@@ -1,0 +1,92 @@
+[
+  {
+    "main_id": 1,
+    "title": "Instagram",
+    "link": "https://www.instagram.com/benying.szetu/",
+    "details": "Benying Szetu",
+    "is_active": 1,
+    "type": "social",
+    "created_Date": "2024-04-25T21:12:20.000Z",
+    "updated_Date": "2024-04-25T21:12:20.000Z"
+  },
+  {
+    "main_id": 2,
+    "title": "Instagram",
+    "link": "https://www.instagram.com/fisionet.ips/",
+    "details": "Fisionet IPS",
+    "is_active": 1,
+    "type": "social",
+    "created_Date": "2024-04-25T21:12:54.000Z",
+    "updated_Date": "2024-04-25T21:12:54.000Z"
+  },
+  {
+    "main_id": 3,
+    "title": "Youtube",
+    "link": "https://www.youtube.com/watch?v=KDzuipsg69c",
+    "details": "Hacer pausas activas durante la jornada laboral es indispensable para mantener la salud de las articulaciones. La fisioterapeuta Benying Szetu comparte las recomendaciones para adelantar estos ejercicios con miras a mantener la salud.",
+    "is_active": 1,
+    "type": "video",
+    "created_Date": "2024-04-25T21:13:19.000Z",
+    "updated_Date": "2024-04-25T21:13:19.000Z"
+  },
+  {
+    "main_id": 4,
+    "title": "Servicios",
+    "link": "https://sanaresbienestar.com/services",
+    "details": "Acá puedes reservar un Servicio con nosotros",
+    "is_active": 1,
+    "type": "common",
+    "created_Date": "2024-04-25T21:14:06.000Z",
+    "updated_Date": "2024-04-25T21:14:06.000Z"
+  },
+  {
+    "main_id": 5,
+    "title": "Ubicación",
+    "link": "https://maps.app.goo.gl/HxGXuacUCZqU8NSe8",
+    "details": "Encuéntranos en Bogotá: Cl. 96 #10-29 Consultorio 302, Bogotá",
+    "is_active": 1,
+    "type": "common",
+    "created_Date": "2024-04-25T21:14:54.000Z",
+    "updated_Date": "2024-04-25T21:14:54.000Z"
+  },
+  {
+    "main_id": 6,
+    "title": "Productos",
+    "link": "https://sanaresbienestar.com/shop",
+    "details": "Descubre los productos que tenemos para ti!",
+    "is_active": 1,
+    "type": "common",
+    "created_Date": "2024-04-25T21:15:33.000Z",
+    "updated_Date": "2024-04-25T21:15:33.000Z"
+  },
+  {
+    "main_id": 7,
+    "title": "Facebook",
+    "link": "https://www.facebook.com/profile.php?id=100092626320538",
+    "details": "Benying Szetu",
+    "is_active": 1,
+    "type": "social",
+    "created_Date": "2024-04-25T21:15:58.000Z",
+    "updated_Date": "2024-04-25T21:15:58.000Z"
+  },
+  {
+    "main_id": 8,
+    "title": "Whatsapp",
+    "link": "https://wa.link/qydk8g",
+    "details": "Contáctanos",
+    "is_active": 1,
+    "type": "social",
+    "created_Date": "2024-04-25T21:16:25.000Z",
+    "updated_Date": "2024-04-25T21:16:25.000Z"
+  },
+  {
+    "main_id": 9,
+    "title": "Sitio Web",
+    "link": "https://sanaresbienestar.com/",
+    "details": "Sanar es Bienestar web page",
+    "is_active": 1,
+    "type": "common",
+    "created_Date": "2024-04-25T21:16:57.000Z",
+    "updated_Date": "2024-04-25T21:16:57.000Z"
+  }
+]

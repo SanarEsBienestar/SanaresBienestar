@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = 'http://localhost:1337/api/'; 
+const BASE_URL = process.env.PUBLIC_API_URL || 'http://localhost:3030/api/v1/'; 
 
 const axiosInstance = axios.create({
   baseURL: BASE_URL,
@@ -9,6 +9,8 @@ const axiosInstance = axios.create({
 //Function with CASE WHEN for methods GET, POST, PUT, DELETE
 const apiPetition = async (method, endpoint, data = null) => {
     let response;
+    console.log(BASE_URL)
+    console.log(method, endpoint, data)
     try {
       switch (method.toLowerCase()) {
         case "get":

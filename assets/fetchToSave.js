@@ -4,7 +4,7 @@ import apiPetition from './apiPetition.js';
 export const fetchDataAndSaveToFile = async (urls) => {
   for (const url of urls) {
     try {
-      const newUrl = url + '?populate=*'
+      const newUrl = url //+ '?populate=*'
       console.log(`Buscando datos de ${newUrl}...`);
       const response = await apiPetition('GET', newUrl);
       const filename = `./data/${url}.json`;
@@ -17,6 +17,6 @@ export const fetchDataAndSaveToFile = async (urls) => {
 };
 
 // Lista de URLs que quieres actualizar
-const urlsToUpdate = ['services', 'availability', 'contact', 'products', 'terapist', 'testimonial', 'link'];
+const urlsToUpdate = ['services', 'availability', 'contact', 'products', 'terapist', 'testimonial', 'links'];
 
 fetchDataAndSaveToFile(urlsToUpdate);

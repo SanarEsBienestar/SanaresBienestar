@@ -6,7 +6,7 @@ export default {
     name: 'ServiciosData',
     data(){
         return{
-            servicesData : servicesData.data,
+            servicesData : servicesData,
             selectedDate: ref(this.getCurrentDate()),
             selectedService: ref(null),
             selectedTime: ref(null),
@@ -143,13 +143,13 @@ export default {
                 <h3 class="text-xl font-medium text-blue">Selecciona un servicio:</h3>
                 <div class="mt-2 grid gap-x-4 gap-y-3 md:grid-cols-2">
                     
-                    <div v-for="servicesData in servicesData" :key="servicesData.id" class="relative w-full rounded-lg bg-white hover:bg-yellowburn">
-                        <input class="peer hidden" :id="servicesData.attributes.slug" type="radio" name="service" v-model="selectedService" :value="servicesData.id" />
-                        <label class="flex h-full cursor-pointer flex-col p-4 peer-checked:shadow-lg peer-checked:bg-bluewhite peer-checked:rounded-lg" :for="servicesData.attributes.slug">
-                            <span class="mt-2 text-md text-blue font-medium">{{ servicesData.attributes.title }}</span>
-                            <span class="text-xs text-grayblue">Duración: {{ servicesData.attributes.duration }} {{ servicesData.attributes.durationtype }}</span>
-                            <span class="text-sm text-pretty pt-2">{{ servicesData.attributes.details }} </span>
-                            <span class="test-xs uppercase text-right font-medium text-blueaccent pt-3">{{formatCurrency(servicesData.attributes.cost) }}</span>
+                    <div v-for="servicesData in servicesData" :key="servicesData.main_id" class="relative w-full rounded-lg bg-white hover:bg-yellowburn">
+                        <input class="peer hidden" :id="servicesData.slug" type="radio" name="service" v-model="selectedService" :value="servicesData.id" />
+                        <label class="flex h-full cursor-pointer flex-col p-4 peer-checked:shadow-lg peer-checked:bg-bluewhite peer-checked:rounded-lg" :for="servicesData.slug">
+                            <span class="mt-2 text-md text-blue font-medium">{{ servicesData.title }}</span>
+                            <span class="text-xs text-grayblue">Duración: {{ servicesData.duration }} {{ servicesData.duration_type }}</span>
+                            <span class="text-sm text-pretty pt-2">{{ servicesData.details }} </span>
+                            <span class="test-xs uppercase text-right font-medium text-blueaccent pt-3">{{formatCurrency(servicesData.cost) }}</span>
                         </label>
                     </div>
 

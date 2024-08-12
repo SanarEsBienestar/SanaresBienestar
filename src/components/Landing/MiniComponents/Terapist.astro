@@ -13,6 +13,7 @@ const { Image, Profession, Name, Description} = Astro.props;
       alt={Name}
       src={Image}
       class="absolute inset-0 h-full w-full object-cover opacity-75 rounded-lg"
+      loading="eager"
     />
   
     <div class="relative p-4 sm:p-6 lg:p-8">

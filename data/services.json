@@ -1,132 +1,90 @@
-{
-  "data": [
-    {
-      "id": 1,
-      "attributes": {
-        "title": "Fisioterapia Ortopédica",
-        "active": true,
-        "duration": 50,
-        "durationtype": "min",
-        "createdAt": "2024-01-02T02:14:18.340Z",
-        "updatedAt": "2024-02-16T15:52:51.916Z",
-        "publishedAt": "2024-01-02T02:14:32.250Z",
-        "cost": 170000,
-        "details": "Aplicación de técnicas manuales que trabajan directamente sobre el tejido y la fascia la cuál genera una disminución de la tensión muscular y sintomatología dolorosa facilitando el aumento de la movilidad.",
-        "slug": "service_0"
-      }
-    },
-    {
-      "id": 2,
-      "attributes": {
-        "title": "Fisioterapia Geriátrica",
-        "active": true,
-        "duration": 50,
-        "durationtype": "min",
-        "createdAt": "2024-01-04T20:16:50.868Z",
-        "updatedAt": "2024-02-16T15:52:34.981Z",
-        "publishedAt": "2024-01-04T20:20:57.926Z",
-        "cost": 170000,
-        "details": "Se inicia con evaluación de las cualidades físicas básicas, patrón de marcha y equilibrio; se desarrolla un plan de intervención de acuerdo a los resultados con el fin de mejorar su funcionalidad y disminuir el riesgo de caídas. ",
-        "slug": "service_1"
-      }
-    },
-    {
-      "id": 3,
-      "attributes": {
-        "title": "Neuro Rehabilitación",
-        "active": true,
-        "duration": 50,
-        "durationtype": "min",
-        "createdAt": "2024-01-04T20:23:31.159Z",
-        "updatedAt": "2024-02-16T15:53:10.850Z",
-        "publishedAt": "2024-01-04T20:23:37.532Z",
-        "cost": 170000,
-        "details": "Tratamiento de enfermedades neurologicas no degenerativas, con técnicas manuales de estimulación nerviosa, que permiten aumentar la circulación y actividad eléctrica del nervio. Se realizan ejercicios orientados a la tarea para que el paciente regrese a sus actividades de la vida diaria de manera más independiente. ",
-        "slug": "service_2"
-      }
-    },
-    {
-      "id": 4,
-      "attributes": {
-        "title": "Rehabilitación Post-Operatorio Ortopédico",
-        "active": true,
-        "duration": 50,
-        "durationtype": "min",
-        "createdAt": "2024-01-04T20:24:31.112Z",
-        "updatedAt": "2024-02-16T15:53:31.414Z",
-        "publishedAt": "2024-01-04T20:24:38.562Z",
-        "cost": 170000,
-        "details": "Intervención sobre el tejido blando en su fase inicial para disminuir la inflamación y el dolor. En sus siguientes fases se aplican técnicas para mejorar la cicatrización, aumentar rango de movimiento, fuerza y flexibilidad. ",
-        "slug": "service_3"
-      }
-    },
-    {
-      "id": 5,
-      "attributes": {
-        "title": "Rehabilitación Cardiopulmonar",
-        "active": true,
-        "duration": 50,
-        "durationtype": "min",
-        "createdAt": "2024-01-04T20:25:36.436Z",
-        "updatedAt": "2024-02-16T15:53:51.975Z",
-        "publishedAt": "2024-01-04T20:25:42.404Z",
-        "cost": 170000,
-        "details": "Aplicación de técnicas de inducción Miofascial enfocadas en la reeducación del patrón respiratorio, aumento de volúmenes y capacidades pulmonares que permitan una mejor oxigenación, disminuir la sensación de fatiga y mejorar su capacidad aeróbica. ",
-        "slug": "service_4"
-      }
-    },
-    {
-      "id": 6,
-      "attributes": {
-        "title": "Masaje de Descarga",
-        "active": true,
-        "duration": 50,
-        "durationtype": "min",
-        "createdAt": "2024-01-04T20:26:43.424Z",
-        "updatedAt": "2024-02-16T15:54:11.032Z",
-        "publishedAt": "2024-01-04T20:26:50.280Z",
-        "cost": 170000,
-        "details": "Aplicación de masoterapia deportiva se logra una relajación muscular que aumenta la circulación y barrido de agentes lesivos y proinflamarorios (lactato) que generan la sensación de fatiga muscular y dolor. ",
-        "slug": "service_5"
-      }
-    },
-    {
-      "id": 7,
-      "attributes": {
-        "title": "Técnica de Inducción Miofascial",
-        "active": true,
-        "duration": 50,
-        "durationtype": "min",
-        "createdAt": "2024-01-04T20:29:31.643Z",
-        "updatedAt": "2024-02-16T15:54:45.510Z",
-        "publishedAt": "2024-01-04T20:29:37.977Z",
-        "cost": 170000,
-        "details": "Técnicas especializadas en el manejo del tejido fascial en grupos musculares que realizan actividades sinergias, permitiendo una descarga en cadena que aumenta la eficiencia de la contracción muscular. ",
-        "slug": "service_6"
-      }
-    },
-    {
-      "id": 8,
-      "attributes": {
-        "title": "Masaje Deportivo de Activación Muscular",
-        "active": true,
-        "duration": 50,
-        "durationtype": "min",
-        "createdAt": "2024-01-04T20:30:35.439Z",
-        "updatedAt": "2024-02-16T15:55:32.827Z",
-        "publishedAt": "2024-01-04T20:30:46.012Z",
-        "cost": 170000,
-        "details": "Técnicas de masoterapia deportiva que aumentan el flujo sanguíneo intramuscular que permite una mejor activación ante la actividad deportiva. ",
-        "slug": "service_7"
-      }
-    }
-  ],
-  "meta": {
-    "pagination": {
-      "page": 1,
-      "pageSize": 25,
-      "pageCount": 1,
-      "total": 8
-    }
+[
+  {
+    "main_id": "4ab7aa86-a4c9-455d-bbff-87478e18abdc",
+    "title": "Fisioterapia Geriátrica",
+    "details": "Se inicia con evaluación de las cualidades físicas básicas, patrón de marcha y equilibrio; se desarrolla un plan de intervención de acuerdo a los resultados con el fin de mejorar su funcionalidad y disminuir el riesgo de caídas.",
+    "duration": 50,
+    "duration_type": "Mins",
+    "cost": 170000,
+    "is_active": 1,
+    "slug": "fisio_geriat",
+    "order": 2
+  },
+  {
+    "main_id": "72a0519a-9c8b-4047-900b-47cf7778f6b2",
+    "title": "Masaje de Descarga",
+    "details": "Aplicación de masoterapia deportiva se logra una relajación muscular que aumenta la circulación y barrido de agentes lesivos y proinflamarorios (lactato) que generan la sensación de fatiga muscular y dolor. ",
+    "duration": 50,
+    "duration_type": "Mins",
+    "cost": 170000,
+    "is_active": 1,
+    "slug": "masj_desc",
+    "order": 6
+  },
+  {
+    "main_id": "ae655753-b63a-4d2c-bec4-fbfa3835a1b9",
+    "title": "Masaje Deportivo de Activación Muscular",
+    "details": "Técnicas de masoterapia deportiva que aumentan el flujo sanguíneo intramuscular que permite una mejor activación ante la actividad deportiva.",
+    "duration": 50,
+    "duration_type": "Mins",
+    "cost": 170000,
+    "is_active": 1,
+    "slug": "masj_deport",
+    "order": 8
+  },
+  {
+    "main_id": "b26b5ef8-456c-4be9-92f2-7598591b8ab7",
+    "title": "Rehabilitación Post-Operatorio Ortopédico",
+    "details": "Intervención sobre el tejido blando en su fase inicial para disminuir la inflamación y el dolor. En sus siguientes fases se aplican técnicas para mejorar la cicatrización, aumentar rango de movimiento, fuerza y flexibilidad.",
+    "duration": 50,
+    "duration_type": "Mins",
+    "cost": 170000,
+    "is_active": 1,
+    "slug": "rehab_postop",
+    "order": 4
+  },
+  {
+    "main_id": "c3ac615e-7be3-4f91-971d-1a1736791e65",
+    "title": "Fisioterapia Ortopédica",
+    "details": "Aplicación de técnicas manuales que trabajan directamente sobre el tejido y la fascia la cuál genera una disminución de la tensión muscular y sintomatología dolorosa facilitando el aumento de la movilidad.",
+    "duration": 50,
+    "duration_type": "Mins",
+    "cost": 170000,
+    "is_active": 1,
+    "slug": "fisio_ortopedica",
+    "order": 1
+  },
+  {
+    "main_id": "e96be862-4574-45e3-a194-82c9f51407e4",
+    "title": "Neuro Rehabilitación",
+    "details": "Tratamiento de enfermedades neurologicas no degenerativas, con técnicas manuales de estimulación nerviosa, que permiten aumentar la circulación y actividad eléctrica del nervio. Se realizan ejercicios orientados a la tarea para que el paciente regrese a sus actividades de la vida diaria de manera más independiente. ",
+    "duration": 50,
+    "duration_type": "Mins",
+    "cost": 170000,
+    "is_active": 1,
+    "slug": "neuro_rehab",
+    "order": 3
+  },
+  {
+    "main_id": "fbc50dc2-a183-4029-b9e9-7b555c1f1204",
+    "title": "Rehabilitación Cardiopulmonar",
+    "details": "Aplicación de técnicas de inducción Miofascial enfocadas en la reeducación del patrón respiratorio, aumento de volúmenes y capacidades pulmonares que permitan una mejor oxigenación, disminuir la sensación de fatiga y mejorar su capacidad aeróbica.",
+    "duration": 50,
+    "duration_type": "Mins",
+    "cost": 170000,
+    "is_active": 1,
+    "slug": "rehab_cardio",
+    "order": 5
+  },
+  {
+    "main_id": "ff994fbd-e646-47bd-bdf3-9b8e26e0f4cf",
+    "title": "Técnica de Inducción Miofascial",
+    "details": "Técnicas especializadas en el manejo del tejido fascial en grupos musculares que realizan actividades sinergias, permitiendo una descarga en cadena que aumenta la eficiencia de la contracción muscular. ",
+    "duration": 50,
+    "duration_type": "Mins",
+    "cost": 170000,
+    "is_active": 1,
+    "slug": "tec_ind",
+    "order": 7
   }
-}
+]

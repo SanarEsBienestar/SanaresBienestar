@@ -1,40 +1,24 @@
-{
-  "data": [
-    {
-      "id": 1,
-      "attributes": {
-        "title": "Gua Sha",
-        "active": true,
-        "qty": 20,
-        "price": 85000,
-        "createdAt": "2024-01-02T01:50:24.039Z",
-        "updatedAt": "2024-03-07T18:49:16.532Z",
-        "publishedAt": "2024-01-02T01:50:33.197Z",
-        "details": "Instrumento para automasajear hecho de cuarzo rosa que permite aumentar la circulación, disminuir la tensión muscular y mejorar el aspecto de la piel, con la compra de la Gua Sha se adjunta una lista de reproducción de videos tutoriales para el dolor en diferentes zonas del cuerpo.",
-        "imgURL": "/img/GuaSha.webp"
-      }
-    },
-    {
-      "id": 2,
-      "attributes": {
-        "title": "Incentivo Inspiratorio Volumetrico",
-        "active": true,
-        "qty": 15,
-        "price": 90000,
-        "createdAt": "2024-01-04T20:12:11.809Z",
-        "updatedAt": "2024-03-07T18:50:06.743Z",
-        "publishedAt": "2024-01-04T20:12:20.513Z",
-        "details": "Es un instrumento que permite aumentar la fuerza de los músculos inspiratirio, facilitando el aumento del volumen de aire inspirado, lo que permite una mejor oxigenación y capacidad para realizar actividades físicas. \nSe adjunta manual de instrucciones con ejercicios progresivos.",
-        "imgURL": "/img/IncentivoRespiratorio.webp"
-      }
-    }
-  ],
-  "meta": {
-    "pagination": {
-      "page": 1,
-      "pageSize": 25,
-      "pageCount": 1,
-      "total": 2
-    }
+[
+  {
+    "main_id": "9000f61b-bf1b-4264-a753-55810a0f562e",
+    "product": "Gua Sha",
+    "details": "Instrumento para automasajear hecho de cuarzo rosa que permite aumentar la circulación, disminuir la tensión muscular y mejorar el aspecto de la piel, con la compra de la Gua Sha se adjunta una lista de reproducción de videos tutoriales para el dolor en diferentes zonas del cuerpo.",
+    "qty": 20,
+    "cost": 85000,
+    "imgURL": "/img/GuaSha.webp",
+    "is_active": 1,
+    "slug": "gua_sha",
+    "order": 1
+  },
+  {
+    "main_id": "ccc9fed9-444a-4926-8f0d-a9702ec03db8",
+    "product": "Incentivo Inspiratorio Volumetrico",
+    "details": "Es un instrumento que permite aumentar la fuerza de los músculos inspiratirio, facilitando el aumento del volumen de aire inspirado, lo que permite una mejor oxigenación y capacidad para realizar actividades físicas. \nSe adjunta manual de instrucciones con ejercicios progresivos.",
+    "qty": 15,
+    "cost": 90000,
+    "imgURL": "/img/IncentivoRespiratorio.webp",
+    "is_active": 1,
+    "slug": "incent_insp",
+    "order": 2
   }
-}
+]

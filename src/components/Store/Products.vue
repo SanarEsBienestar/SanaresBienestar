@@ -6,7 +6,7 @@ export default {
     name: 'Products',
     data (){
         return {
-            productsData: Products.data,
+            productsData: Products,
             productQuantities: {},
             message: '',
             isMessageVisible: false,
@@ -22,90 +22,19 @@ export default {
             });
             return formatter.format(value);
         },
-        // addToCart(product) {
-        //     // Primero, intenta recuperar el item del localStorage.
-        //     let cart = localStorage.getItem('cartItems');
-
-        //     // Verifica si cart es null o undefined.
-        //     if (cart === null || cart === undefined || !cart) {
-        //         // Si cart no existe, inicialízalo como un arreglo vacío y guárdalo en localStorage.
-        //         localStorage.setItem('cartItems', '');
-        //         // Luego, asigna ese arreglo vacío a la variable cart.
-        //         cart = localStorage.getItem('cartItems');
-        //     } 
-
-        //     const qtyToAdd = product.qty || 1; // Asume que ya tienes la cantidad definida
-
-        //     console.log("Cantidad" + cart.length);
-
-        //     // Encuentra si el producto ya existe en el carrito
-        //     if(cart.length == 0){
-        //          // Agrega el nuevo producto al carrito si no se supera el máximo
-        //          const productToAdd = {
-        //             id: product.id,
-        //             title: product.attributes.title,
-        //             price: product.attributes.price,
-        //             qty: qtyToAdd,
-        //             subtotal: product.attributes.price * qtyToAdd // Calcula el subtotal
-        //         };
-        //         localStorage.setItem('cartItems', JSON.stringify([productToAdd]));
-        //         this.showMessage('Producto agregado al carrito');
-        //         return
-        //     } else {
-        //         const existingProductIndex = cart.findIndex(item => item.id === product.id);
-        //         console.log(existingProductIndex);
-        //     }
-            
-        //     if (existingProductIndex !== -1) {
-        //         // Calcula la nueva cantidad total que tendría el producto después de añadir las unidades
-        //         const newQty = cart[existingProductIndex].qty + qtyToAdd;
-                
-        //         // Verifica si la nueva cantidad supera el máximo permitido
-        //         if (newQty > 5) {
-        //             this.showMessage('No se pueden agregar más de 5 unidades');
-        //             return; // Sale del método sin actualizar el carrito
-        //         }
-
-        //         // Actualiza la cantidad y el subtotal si no se supera el máximo
-        //         cart[existingProductIndex].qty = newQty;
-        //         cart[existingProductIndex].subtotal = cart[existingProductIndex].price * newQty;
-        //     } else {
-        //         // Si el producto no existe en el carrito, verifica si la cantidad a añadir supera el máximo permitido
-        //         if (qtyToAdd > 5) {
-        //             this.showMessage('No se pueden agregar más de 5 unidades');
-        //             return; // Sale del método sin agregar el producto al carrito
-        //         }
-
-        //         // Agrega el nuevo producto al carrito si no se supera el máximo
-        //         const productToAdd = {
-        //             id: product.id,
-        //             title: product.attributes.title,
-        //             price: product.attributes.price,
-        //             qty: qtyToAdd,
-        //             subtotal: product.attributes.price * qtyToAdd // Calcula el subtotal
-        //         };
-        //         cart.push(productToAdd);
-        //         //localStorage.setItem('cart', JSON.stringify([productToAdd]));
-        //     }
-
-        //     console.log(cart);
-        //     this.showMessage('Producto agregado al carrito');
-        //     // setTimeout(()=>{
-        //     //     // Recargar la página después de 3 segundos
-        //     //     window.location.reload();
-        //     // }, 3000);
-        // },
         addToCart(product) {
             // Intenta recuperar el item del localStorage y lo convierte de JSON a un objeto de JavaScript.
             let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
 
             const qtyToAdd = product.qty || 1; // Asume que ya tienes la cantidad definida
 
+            console.log("Cantidad: " + qtyToAdd)
+
             // Ya no es necesario verificar si cart es null o undefined aquí, porque ya lo manejamos arriba
 
-            console.log("Cantidad" + cart.length);
+            console.log("Cantidad en carrito: " + cart.length);
 
-            const existingProductIndex = cart.findIndex(item => item.id === product.id);
+            const existingProductIndex = cart.findIndex(item => item.main_id === product.main_id);
             console.log(existingProductIndex);
 
             if (existingProductIndex !== -1) {
@@ -116,7 +45,7 @@ export default {
                     return;
                 }
                 cart[existingProductIndex].qty = newQty;
-                cart[existingProductIndex].subtotal = cart[existingProductIndex].price * newQty;
+                cart[existingProductIndex].subtotal = cart[existingProductIndex].cost * newQty;
             } else {
                 // El producto no existe, agrega un nuevo producto al carrito
                 if (qtyToAdd > 5) {
@@ -124,11 +53,11 @@ export default {
                     return;
                 }
                 const productToAdd = {
-                    id: product.id,
-                    title: product.attributes.title,
-                    price: product.attributes.price,
+                    id: product.main_id,
+                    title: product.title,
+                    price: product.cost,
                     qty: qtyToAdd,
-                    subtotal: product.attributes.price * qtyToAdd
+                    subtotal: product.cost * qtyToAdd
                 };
                 cart.push(productToAdd);
             }
@@ -164,12 +93,12 @@ export default {
 
                 <div v-for="productsData in productsData" :key="productsData.id" class="relative bg-white rounded-lg overflow-hidden shadow-lg p-4 sm:p-8">
                     <span class="text-xs font-semibold bg-green text-white py-1 px-3 rounded-md opacity-60 tracking-wide">Salud</span>
-                    <img :src=productsData.attributes.imgURL :alt=productsData.attributes.title class="w-full h-48 sm:h-80 object-contain rounded-lg mt-2">
-                    <h3 class="text-lg sm:text-2xl text-center font-medium mt-4">{{ productsData.attributes.title }}</h3>
-                    <p class="text-gray-600 text-sm my-4 text-balanced">{{ productsData.attributes.details }}</p>
+                    <img :src=productsData.imgURL :alt=productsData.title class="w-full h-48 sm:h-80 object-contain rounded-lg mt-2">
+                    <h3 class="text-lg sm:text-2xl text-center font-medium mt-4">{{ productsData.title }}</h3>
+                    <p class="text-gray-600 text-sm my-4 text-balanced">{{ productsData.details }}</p>
 
                     <div class="flex flex-col sm:flex-row justify-between items-center mt-4">
-                        <span class="text-gray-800 text-lg font-medium">{{ formatCurrency(productsData.attributes.price) }}</span>
+                        <span class="text-gray-800 text-lg font-medium">{{ formatCurrency(productsData.cost) }} COP</span>
                         <label for="qty" class="flex items-center text-sm mt-2 sm:mt-0">Cantidad:
                         <input id="qty" class="ml-2 w-16 border-gray-300 rounded-md border text-center" type="number" min="1" max="5" value="1" />
                         </label>

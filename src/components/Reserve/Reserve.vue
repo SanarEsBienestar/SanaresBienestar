@@ -134,7 +134,7 @@ export default {
             <h1 class="mt-2 px-8 text-3xl font-medium text-white md:text-5xl">Nuestros Servicios</h1>
             <p class="mt-6 text-lg text-white">Puedes reservar tu sesión ahora mismo</p>
             <p class="mx-2 text-pretty text-sm text-grayash">Selecciona el servicio que quieras, la fecha para validar disponibilidad y la hora que mejor se te ajuste</p>
-            <img class="absolute top-0 left-0 -z-10 h-full w-full object-cover" src="../../../public/img/services.webp" alt="Nuestros Servicios reserva ahora" />
+            <img class="absolute top-0 left-0 -z-10 h-full w-full object-cover" src="https://cdn.pixabay.com/photo/2016/04/13/22/12/hands-1327811_1280.jpg" alt="Nuestros Servicios reserva ahora" />
         </div>
 
         <div class="mx-auto grid max-w-screen px-2 pb-8 flex justify-center gap-8">
